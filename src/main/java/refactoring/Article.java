@@ -5,9 +5,9 @@ public class Article {
     private Bike bike;
     private int purchaseAmount;
 
-    public Article(Bike b, int pa) {
-        bike = b;
-        purchaseAmount = pa;
+    public Article(Bike bike, int purchaseAmount) {
+        this.bike = bike;
+        this.purchaseAmount = purchaseAmount;
     }
 
     public Bike getBike() {
