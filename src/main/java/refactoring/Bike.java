@@ -6,15 +6,21 @@ public class Bike {
     public double price;
     private int rearGearsCount;
     private int frontGearsCount;
+    private int maxSpeed;
 
-    public Bike(String productName, double price, int rearGearsCount, int frontGearsCount) {
+    public Bike(String productName, double price, int rearGearsCount, int frontGearsCount, int maxSpeed) {
         this.productName = productName;
         this.price = price;
         this.rearGearsCount = rearGearsCount;
         this.frontGearsCount = frontGearsCount;
+        this.maxSpeed = maxSpeed;
     }
 
     public int getGearsCount() {
-        return rearGearsCount * frontGearsCount;
+        return this.rearGearsCount * this.frontGearsCount;
+    }
+
+    public int getMaxSpeed() {
+        return this.maxSpeed;
     }
 }
