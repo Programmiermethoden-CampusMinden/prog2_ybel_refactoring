@@ -1,3 +1,6 @@
+/**
+ * Die Klasse Bill repräsentiert eine Rechnung für einen Kunden mit einer Artikelliste.
+ */
 package refactoring;
 
 import java.util.ArrayList;
@@ -6,23 +9,44 @@ public class Bill {
     private Customer customer;
     private ArrayList<Article> articles;
 
+    /**
+     * Erstellt eine neue Rechnung für einen Kunden.
+     * @param customer Der Kunde
+     */
     public Bill(Customer customer) {
         this.customer = customer;
         this.articles = new ArrayList<>();
     }
 
+    /**
+     * Gibt den Kunden der Rechnung zurück.
+     * @return Kunde
+     */
     public Customer getCustomer() {
         return customer;
     }
 
+    /**
+     * Gibt die Artikelliste zurück.
+     * @return Liste der Artikel
+     */
     public ArrayList<Article> getArticles() {
         return articles;
     }
 
+    /**
+     * Fügt einen Artikel zur Rechnung hinzu.
+     * @param a Artikel
+     * @return true, wenn erfolgreich hinzugefügt
+     */
     public boolean addArticle(Article a) {
         return articles.add(a);
     }
 
+    /**
+     * Gibt die Rechnungsdetails als String zurück.
+     * @return Rechnungsdetails
+     */
     public String getDetails() {
         double total = 0;
         String result = "Details for \"" + customer.getName() + "\"\n";
