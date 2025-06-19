@@ -2,8 +2,8 @@ package refactoring;
 
 public class Bike {
 
-    public String productName;
-    public double price;
+    private String productName;
+    private double price;
     private int rearGearsCount;
     private int frontGearsCount;
     private int maxSpeed;
@@ -14,6 +14,14 @@ public class Bike {
         this.rearGearsCount = rearGearsCount;
         this.frontGearsCount = frontGearsCount;
         this.maxSpeed = maxSpeed;
+    }
+
+    public String getProductName() {
+        return this.productName;
+    }
+
+    public double getPrice() {
+        return this.price;
     }
 
     public int getGearsCount() {
