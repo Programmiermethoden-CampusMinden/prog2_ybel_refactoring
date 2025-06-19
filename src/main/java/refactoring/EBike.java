@@ -7,8 +7,7 @@ public class EBike extends Bike {
     public int frontGearsCount;
 
     public EBike(String pn, double p, int ms, int rgc, int fgc, int bc) {
-        productName = pn;
-        price = p;
+        super(pn, p);
         maxSpeed = ms;
         rearGearsCount = rgc;
         frontGearsCount = fgc;
