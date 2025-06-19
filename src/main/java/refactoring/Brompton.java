@@ -18,11 +18,6 @@ public class Brompton extends Bike {
     }
 
     @Override
-    public Integer getBatteryCapacity() {
-        return null;
-    }
-
-    @Override
     public int getGearsCount() {
         return rearGearsCount * frontGearsCount;
     }

@@ -16,12 +16,7 @@ public class Mountainbike extends Bike {
     public int getMaxSpeed() {
         return maxSpeed;
     }
-
-    @Override
-    public Integer getBatteryCapacity() {
-        return null;
-    }
-
+    
     @Override
     public int getGearsCount() {
         return rearGearsCount * frontGearsCount;
