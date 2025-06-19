@@ -5,15 +5,16 @@ import java.util.Date;
 
 public class Bill {
 
-    public String customerName;
-    public String nickname;
-    public Date birthday;
-    public String email;
-    public String street;
-    public String streetNumber;
-    public int postalCode;
-    public String city;
-    public ArrayList<Article> articles;
+    // Attribute auf private setzen
+    private String customerName;
+    private String nickname;
+    private Date birthday;
+    private String email;
+    private String street;
+    private String streetNumber;
+    private int postalCode;
+    private String city;
+    private ArrayList<Article> articles;
 
     public Bill(String cn, String n, String s, String sn, int pc, Date b, String e, String c) {
         customerName = cn;
@@ -25,6 +26,43 @@ public class Bill {
         email = e;
         city = c;
         articles = new ArrayList<>();
+    }
+
+    // Getter-Methoden für alle Attribute
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public String getStreetNumber() {
+        return streetNumber;
+    }
+
+    public int getPostalCode() {
+        return postalCode;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public ArrayList<Article> getArticles() {
+        return articles;
     }
 
     public boolean addArticle(Article a) {
