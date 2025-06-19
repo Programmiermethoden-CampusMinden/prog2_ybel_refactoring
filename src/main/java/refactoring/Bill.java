@@ -1,64 +1,18 @@
 package refactoring;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Bill {
-
-    // Attribute auf private setzen
-    private String customerName;
-    private String nickname;
-    private Date birthday;
-    private String email;
-    private String street;
-    private String streetNumber;
-    private int postalCode;
-    private String city;
+    private Customer customer;
     private ArrayList<Article> articles;
 
-    public Bill(String customerName, String nickname, String street, String streetNumber, int postalCode, Date birthday, String email, String city) {
-        this.customerName = customerName;
-        this.nickname = nickname;
-        this.street = street;
-        this.streetNumber = streetNumber;
-        this.postalCode = postalCode;
-        this.birthday = birthday;
-        this.email = email;
-        this.city = city;
+    public Bill(Customer customer) {
+        this.customer = customer;
         this.articles = new ArrayList<>();
     }
 
-    // Getter-Methoden für alle Attribute
-    public String getCustomerName() {
-        return customerName;
-    }
-
-    public String getNickname() {
-        return nickname;
-    }
-
-    public Date getBirthday() {
-        return birthday;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public String getStreetNumber() {
-        return streetNumber;
-    }
-
-    public int getPostalCode() {
-        return postalCode;
-    }
-
-    public String getCity() {
-        return city;
+    public Customer getCustomer() {
+        return customer;
     }
 
     public ArrayList<Article> getArticles() {
@@ -71,12 +25,11 @@ public class Bill {
 
     public String getDetails() {
         double total = 0;
-
-        String result = "Details for \"" + customerName + "\"\n";
-        result += street + " " + streetNumber + "\n";
-        result += postalCode + " " + city + "\n";
-        result += "Geburtstag: " + birthday + "\n";
-        result += "Email: " + email + "\n\n";
+        String result = "Details for \"" + customer.getName() + "\"\n";
+        result += customer.getStreet() + " " + customer.getStreetNumber() + "\n";
+        result += customer.getPostalCode() + " " + customer.getCity() + "\n";
+        result += "Geburtstag: " + customer.getBirthday() + "\n";
+        result += "Email: " + customer.getEmail() + "\n\n";
         result += "refactoring.Article: \n";
         for (Article article : articles) {
             double price = 0;
@@ -97,7 +50,6 @@ public class Bill {
             if (price > 1000f || price == 1000.0) {
                 price = price * 0.8;
             }
-
             result +=
                     "\t"
                             + article.getBike().getProductName()
@@ -108,9 +60,7 @@ public class Bill {
                             + "\n";
             total += price;
         }
-
         result += "\nTotal price:\t" + String.valueOf(total) + "\n";
-
         return result;
     }
 }
