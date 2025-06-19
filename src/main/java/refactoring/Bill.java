@@ -16,16 +16,16 @@ public class Bill {
     private String city;
     private ArrayList<Article> articles;
 
-    public Bill(String cn, String n, String s, String sn, int pc, Date b, String e, String c) {
-        customerName = cn;
-        nickname = n;
-        street = s;
-        streetNumber = sn;
-        postalCode = pc;
-        birthday = b;
-        email = e;
-        city = c;
-        articles = new ArrayList<>();
+    public Bill(String customerName, String nickname, String street, String streetNumber, int postalCode, Date birthday, String email, String city) {
+        this.customerName = customerName;
+        this.nickname = nickname;
+        this.street = street;
+        this.streetNumber = streetNumber;
+        this.postalCode = postalCode;
+        this.birthday = birthday;
+        this.email = email;
+        this.city = city;
+        this.articles = new ArrayList<>();
     }
 
     // Getter-Methoden für alle Attribute
